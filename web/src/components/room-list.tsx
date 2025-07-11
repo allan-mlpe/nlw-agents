@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useRooms } from '@/http/types/get-rooms-response'
+import { useRooms } from '@/http/get-rooms-response'
 import { dayjs } from '@/lib/dayjs'
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
