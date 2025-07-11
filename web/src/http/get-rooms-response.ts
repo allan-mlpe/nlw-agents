@@ -1,5 +1,5 @@
-import type { GetRoomsResponse } from "./use-rooms";
 import { useQuery } from '@tanstack/react-query';
+import type { GetRoomsResponse } from './types/use-rooms';
 
 export function useRooms() {
     return useQuery({
