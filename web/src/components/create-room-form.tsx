@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "./ui/card";
 import { z } from 'zod/v4';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormField, FormLabel, FormItem } from "./ui/form";
+import { Form, FormControl, FormField, FormLabel, FormItem, FormMessage } from "./ui/form";
 import { Input, } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -50,7 +50,7 @@ export function CreateRoomForm() {
                         <FormField 
                             control={createRoomForm.control}
                             name="name"
-                            render={({ field, fieldState }) => {
+                            render={({ field }) => {
                                 return (
                                     <FormItem>
                                         <FormLabel>Nome da sala</FormLabel>
@@ -58,9 +58,7 @@ export function CreateRoomForm() {
                                             <Input {...field} 
                                             placeholder="Digite o nome da sala" />
                                         </FormControl>
-                                        {fieldState.error && (
-                                            <p className="text-sm text-red-500">{fieldState.error.message}</p>
-                                        )}
+                                        <FormMessage />
                                     </FormItem>
                                 )
                             }}
