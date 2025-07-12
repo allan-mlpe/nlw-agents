@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { CreateQuestionRequest } from "./types/create-question-request";
 import type { CreateQuestionResponse } from "./types/create-question-response";
 
-export function useCreateRoom(roomId: string) {
+export function useCreateQuestion(roomId: string) {
     const queryClient = useQueryClient();
 
     return useMutation({
