@@ -37,6 +37,11 @@ export function RecordRoomAudio() {
         if (recorder.current && recorder.current.state !== 'inactive') {
             recorder.current.stop();
         }
+
+        // precisamos zerar o intervalo se o usuário parar a gravação manualmente
+        if (intervalRef.current) {
+           clearInterval(intervalRef.current); 
+        }
     }
 
     function createRecorder(audio: MediaStream) {
@@ -85,7 +90,7 @@ export function RecordRoomAudio() {
             recorder.current?.stop();
 
             createRecorder(audio);
-        }, 5_000);
+        }, 5_000); // iremos gravar chunks de 5s de áudio
     }
 
     if (!params.roomId) {
