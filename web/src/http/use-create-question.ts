@@ -30,6 +30,7 @@ export function useCreateQuestion(roomId: string) {
                 question,
                 answer: null,
                 createdAt: new Date().toISOString(),
+                isGeneratingAnswer: true,
             };
             
             // estamos usando uma estratégia de "Interface Otimista": estamos adicionando a pergunta feita
@@ -56,7 +57,8 @@ export function useCreateQuestion(roomId: string) {
                             return { 
                                 ...context.newQuestion, 
                                 id: data.questionId,
-                                answer: data.answer
+                                answer: data.answer,
+                                isGeneratingAnswer: false,
                             }
                         }
 

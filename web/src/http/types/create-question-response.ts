@@ -1,3 +1,4 @@
 export type CreateQuestionResponse = {
-    questionId: string
+    questionId: string,
+    answer: string | null,
 }
