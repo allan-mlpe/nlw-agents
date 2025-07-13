@@ -32,9 +32,9 @@ export const createQuestionRoute: FastifyPluginCallbackZod = (app) => {
             .where(
                 and(
                     eq(schema.audioChunks.roomId, roomId),
-                    sql`1 - (${schema.audioChunks.embeddings} <=> ${embeddingsAsString}::vector) > 0.7` /* <=> : é um operador usado para comparar vetores
-                                                                                           0.7 : é o grau de similaridade que estamos querendo entre os vetores. Quanto mais perto de 1, mais similaridade existe entre os textos.
-                                                                                        */
+                    sql`1 - (${schema.audioChunks.embeddings} <=> ${embeddingsAsString}::vector) > 0.75` /* <=>  : é um operador usado para comparar vetores
+                                                                                                            0.75 : é o grau de similaridade que estamos querendo entre os vetores. Quanto mais perto de 1, mais similaridade existe entre os textos.
+                                                                                                         */
 
                 )  
             )
